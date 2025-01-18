@@ -17,6 +17,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Text } from "./src/components/typography/text.component";
 import { SafeArea } from "./src/components/utility/safe-area.component";
 import { RestaurantContextProvider } from "./src/services/restaurants/restaurants.context";
+import { LocationContextProvider } from "./src/services/location/location.context";
 
 const MapScreen = () => {
 	return (
@@ -83,9 +84,11 @@ export default function App() {
 	return (
 		<>
 			<ThemeProvider theme={theme}>
-				<RestaurantContextProvider>
-					<Navigation />
-				</RestaurantContextProvider>
+				<LocationContextProvider>
+					<RestaurantContextProvider>
+						<Navigation />
+					</RestaurantContextProvider>
+				</LocationContextProvider>
 			</ThemeProvider>
 			<ExpoStatusBar style="auto" />
 		</>
