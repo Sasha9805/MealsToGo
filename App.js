@@ -69,11 +69,11 @@ const BottomTabs = createBottomTabNavigator({
 const Navigation = createStaticNavigation(BottomTabs);
 
 export default function App() {
-	const [oswaldLoaded, oswaldError] = useOswald({
+	const [oswaldLoaded] = useOswald({
 		Oswald_400Regular,
 	});
 
-	const [latoLoaded, latoError] = useLato({
+	const [latoLoaded] = useLato({
 		Lato_400Regular,
 	});
 
