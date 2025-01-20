@@ -5,14 +5,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { SafeArea } from "../../components/utility/safe-area.component";
 import { Text } from "../../components/typography/text.component";
 import { RestaurantsNavigator } from "./restaurants.navigator";
-
-const MapScreen = () => {
-	return (
-		<SafeArea>
-			<Text>MAP SCREEN</Text>
-		</SafeArea>
-	);
-};
+import { MapScreen } from "../../features/map/screens/map.screen";
 
 const SettingsScreen = () => {
 	return (
