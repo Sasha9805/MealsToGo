@@ -1,4 +1,5 @@
 /* eslint-disable import/namespace */
+import "./src/infrastructure/navigation/gesture-handler";
 import { registerRootComponent } from "expo";
 
 import App from "./App";
