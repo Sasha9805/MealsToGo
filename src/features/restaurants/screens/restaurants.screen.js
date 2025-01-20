@@ -1,10 +1,5 @@
 import { useContext } from "react";
-import {
-	FlatList,
-	Pressable,
-	TouchableWithoutFeedback,
-	TouchableOpacity,
-} from "react-native";
+import { FlatList, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { ActivityIndicator, MD2Colors } from "react-native-paper";
 import styled from "styled-components/native";
