@@ -25,25 +25,10 @@ const Item = styled.View`
 	align-items: center;
 `;
 
-// const TestView = styled.View`
-// 	border-radius: 10px;
-// 	width: 120px;
-// 	height: 120px;
-// 	overflow: hidden;
-// `;
-
-// const AndroidView = ({ source }) => {
-// 	return (
-// 		<TestView>
-// 			<WebView source={source} />
-// 		</TestView>
-// 	);
-// };
-
 const isAndroid = Platform.OS === "android";
 
-export const CompactRestaurantInfo = ({ restaurant }) => {
-	const Image = isAndroid ? CompactWebview : CompactImage;
+export const CompactRestaurantInfo = ({ restaurant, isMap }) => {
+	const Image = isAndroid && isMap ? CompactWebview : CompactImage;
 	return (
 		<Item>
 			<Image source={{ uri: restaurant.photos[0] }} />
