@@ -1,4 +1,5 @@
 import camelize from "camelize";
+import { hostPlaces } from "../../utils/env";
 
 export const restaurantTransform = ({ results = [] }) => {
 	const mappedResults = results.map((restaurant) => {
@@ -15,7 +16,7 @@ export const restaurantTransform = ({ results = [] }) => {
 };
 
 export const restaurantRequest = (location) => {
-	return fetch(
-		`http://127.0.0.1:5001/mealstogo-e7267/us-central1/placesNearby?location=${location}`
-	).then((res) => res.json());
+	return fetch(`${hostPlaces}?location=${location}`).then((res) =>
+		res.json()
+	);
 };
