@@ -14,19 +14,17 @@ export const RestaurantContextProvider = ({ children }) => {
 	const retreiveRestaurants = (locationString) => {
 		setIsLoading(true);
 		setRestaurants([]);
-		// eslint-disable-next-line no-undef
-		setTimeout(() => {
-			restaurantRequest(locationString)
-				.then(restaurantTransform)
-				.then((results) => {
-					setIsLoading(false);
-					setRestaurants(results);
-				})
-				.catch((err) => {
-					setIsLoading(false);
-					setError(err);
-				});
-		}, 4000);
+
+		restaurantRequest(locationString)
+			.then(restaurantTransform)
+			.then((results) => {
+				setIsLoading(false);
+				setRestaurants(results);
+			})
+			.catch((err) => {
+				setIsLoading(false);
+				setError(err);
+			});
 	};
 
 	useEffect(() => {
