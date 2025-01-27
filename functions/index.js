@@ -11,10 +11,20 @@ const { onRequest } = require("firebase-functions/v2/https");
 const { geocodeRequest } = require("./geocode");
 const { placesRequest } = require("./places");
 
-exports.geocode = onRequest((request, response) => {
-	geocodeRequest(request, response);
-});
+const { Client } = require("@googlemaps/google-maps-services-js");
 
-exports.placesNearby = onRequest((request, response) => {
-	placesRequest(request, response);
-});
+const client = new Client({});
+
+exports.geocode = onRequest(
+	{ secrets: ["GOOGLE_MAPS_KEY"] },
+	(request, response) => {
+		geocodeRequest(request, response, client);
+	}
+);
+
+exports.placesNearby = onRequest(
+	{ secrets: ["GOOGLE_MAPS_KEY"] },
+	(request, response) => {
+		placesRequest(request, response, client);
+	}
+);
