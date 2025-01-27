@@ -1,5 +1,5 @@
 import camelize from "camelize";
-import { hostPlaces } from "../../utils/env";
+import { hostPlaces, isMock } from "../../utils/env";
 
 export const restaurantTransform = ({ results = [] }) => {
 	const mappedResults = results.map((restaurant) => {
@@ -16,7 +16,7 @@ export const restaurantTransform = ({ results = [] }) => {
 };
 
 export const restaurantRequest = (location) => {
-	return fetch(`${hostPlaces}?location=${location}`).then((res) =>
-		res.json()
+	return fetch(`${hostPlaces}?location=${location}&mock=${isMock}`).then(
+		(res) => res.json()
 	);
 };
