@@ -33,6 +33,7 @@
     "react-native-screens": "3.31.1",
     "react-native-svg": "15.2.0",
     "react-native-webview": "13.8.6",
+    "stripe-client": "^1.1.5",
     "styled-components": "^6.1.14"
   },
   "devDependencies": {
