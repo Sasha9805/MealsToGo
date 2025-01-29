@@ -6,6 +6,7 @@ import { AuthenticationContext } from "../../services/authentication/authenticat
 import { RestaurantContextProvider } from "../../services/restaurants/restaurants.context";
 import { LocationContextProvider } from "../../services/location/location.context";
 import { FavouritesContextProvider } from "../../services/favourites/favourites.context";
+import { CartContextProvider } from "../../services/cart/cart.context";
 
 export const Navigation = () => {
 	const { isAuthenticated } = useContext(AuthenticationContext);
@@ -13,7 +14,9 @@ export const Navigation = () => {
 		<FavouritesContextProvider>
 			<LocationContextProvider>
 				<RestaurantContextProvider>
-					<AppNavigator />
+					<CartContextProvider>
+						<AppNavigator />
+					</CartContextProvider>
 				</RestaurantContextProvider>
 			</LocationContextProvider>
 		</FavouritesContextProvider>
