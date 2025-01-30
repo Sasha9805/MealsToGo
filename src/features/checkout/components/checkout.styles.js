@@ -1,5 +1,11 @@
 import styled from "styled-components/native";
-import { Avatar } from "react-native-paper";
+import {
+	ActivityIndicator,
+	Avatar,
+	Button,
+	MD2Colors,
+	TextInput,
+} from "react-native-paper";
 
 export const CartIconContainer = styled.View`
 	align-items: center;
@@ -11,4 +17,35 @@ export const CartIcon = styled(Avatar.Icon).attrs({
 })`
 	background-color: ${(props) =>
 		props.bg || props.theme.colors.brand.primary};
+`;
+
+export const NameInput = styled(TextInput)`
+	margin: ${(props) => props.theme.space[3]};
+`;
+
+export const PayButton = styled(Button).attrs((props) => ({
+	color: props.theme.colors.brand.primary,
+}))`
+	align-self: center;
+	width: 80%;
+	padding: ${(props) => props.theme.space[2]};
+`;
+
+export const ClearButton = styled(Button).attrs((props) => ({
+	color: props.theme.colors.ui.error,
+}))`
+	align-self: center;
+	width: 80%;
+	padding: ${(props) => props.theme.space[2]};
+`;
+
+export const PaymentProcessing = styled(ActivityIndicator).attrs({
+	size: 128,
+	animating: true,
+	color: MD2Colors.blue300,
+})`
+	position: absolute;
+	top: 50%;
+	left: 35%;
+	z-index: 999;
 `;

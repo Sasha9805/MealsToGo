@@ -4,8 +4,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { RestaurantsNavigator } from "./restaurants.navigator";
 import { MapScreen } from "../../features/map/screens/map.screen";
-import { CheckoutScreen } from "../../features/checkout/screens/checkout.screen";
 import { SettingsNavigator } from "./settings.navigator";
+import { CheckoutNavigator } from "./checkout.navigator";
 
 const TAB_ICON = {
 	Restaurants: "restaurant",
@@ -33,7 +33,7 @@ const createScreenOptions = ({ route }) => {
 const BottomTabs = createBottomTabNavigator({
 	screens: {
 		Restaurants: RestaurantsNavigator,
-		Checkout: CheckoutScreen,
+		Checkout: CheckoutNavigator,
 		Map: MapScreen,
 		Settings: SettingsNavigator,
 	},

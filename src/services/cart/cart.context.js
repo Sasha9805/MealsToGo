@@ -11,6 +11,40 @@ export const CartContextProvider = ({ children }) => {
 	const [restaurant, setRestaurant] = useState(null);
 	const [sum, setSum] = useState(0);
 
+	const saveCart = async (rst, crt, uid) => {
+		try {
+			const jsonValue = JSON.stringify({ restaurant: rst, cart: crt });
+			await AsyncStorage.setItem(`@cart-${uid}`, jsonValue);
+		} catch (err) {
+			console.log("error storing", err);
+		}
+	};
+
+	const loadCart = async (uid) => {
+		try {
+			const value = await AsyncStorage.getItem(`@cart-${uid}`);
+			if (value !== null) {
+				const { restaurant: rst, cart: crt } = JSON.parse(value);
+				setRestaurant(rst);
+				setCart(crt);
+			}
+		} catch (err) {
+			console.log("error storing", err);
+		}
+	};
+
+	useEffect(() => {
+		if (user && user.uid) {
+			loadCart(user.uid);
+		}
+	}, [user]);
+
+	useEffect(() => {
+		if (user && user.uid && restaurant && cart.length) {
+			saveCart(restaurant, cart, user.uid);
+		}
+	}, [restaurant, cart, user]);
+
 	useEffect(() => {
 		if (!cart.length) {
 			setSum(0);
@@ -37,6 +71,7 @@ export const CartContextProvider = ({ children }) => {
 	const clear = () => {
 		setCart([]);
 		setRestaurant(null);
+		saveCart(null, [], user.uid);
 	};
 	return (
 		<CartContext.Provider
