@@ -2,8 +2,9 @@ import styled from "styled-components/native";
 import { Card } from "react-native-paper";
 
 export const RestaurantCard = styled(Card)`
+	width: 95%;
+	align-self: center;
 	background-color: ${(props) => props.theme.colors.bg.primary};
-	border-radius: 0px;
 `;
 
 export const RestaurantCardCover = styled(Card.Cover)`
