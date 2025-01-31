@@ -24,7 +24,7 @@ export const NameInput = styled(TextInput)`
 `;
 
 export const PayButton = styled(Button).attrs((props) => ({
-	color: props.theme.colors.brand.primary,
+	buttonColor: props.theme.colors.brand.primary,
 }))`
 	align-self: center;
 	width: 80%;
@@ -32,7 +32,7 @@ export const PayButton = styled(Button).attrs((props) => ({
 `;
 
 export const ClearButton = styled(Button).attrs((props) => ({
-	color: props.theme.colors.ui.error,
+	buttonColor: props.theme.colors.ui.error,
 }))`
 	align-self: center;
 	width: 80%;

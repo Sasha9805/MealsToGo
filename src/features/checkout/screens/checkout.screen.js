@@ -126,6 +126,8 @@ export const CheckoutScreen = () => {
 						Clear Cart
 					</ClearButton>
 				</Spacer>
+
+				<Spacer position="bottom" size="large" />
 			</ScrollView>
 		</SafeArea>
 	);
