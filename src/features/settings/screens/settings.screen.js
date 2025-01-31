@@ -9,6 +9,7 @@ import styled from "styled-components/native";
 import { Text } from "../../../components/typography/text.component";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { colors } from "../../../infrastructure/theme/colors";
 
 const SettingsItem = styled(List.Item)`
 	padding: ${(props) => props.theme.space[3]};
@@ -42,13 +43,13 @@ export const SettingsScreen = () => {
 						<Avatar.Icon
 							size={180}
 							icon="human"
-							backgroundColor="#2182BD"
+							backgroundColor={colors.brand.primary}
 						/>
 					) : (
 						<Avatar.Image
 							size={180}
 							source={{ uri: photo }}
-							backgroundColor="#2182BD"
+							backgroundColor={colors.brand.primary}
 						/>
 					)}
 				</TouchableOpacity>
