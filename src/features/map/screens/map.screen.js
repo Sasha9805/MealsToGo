@@ -1,4 +1,4 @@
-import MapView, { Marker, Callout } from "react-native-maps";
+import MapView, { Marker, Callout, PROVIDER_GOOGLE } from "react-native-maps";
 import { useNavigation } from "@react-navigation/native";
 import styled from "styled-components/native";
 import { Search } from "../components/search.component";
@@ -33,6 +33,7 @@ const RestaurantMap = () => {
 		<>
 			<Search />
 			<Map
+				provider={PROVIDER_GOOGLE}
 				region={{
 					latitude: lat,
 					longitude: lng,
@@ -74,6 +75,7 @@ export const MapScreen = () => {
 	if (!location) {
 		return (
 			<Map
+				provider={PROVIDER_GOOGLE}
 				region={{
 					latitude: 0,
 					longitude: 0,

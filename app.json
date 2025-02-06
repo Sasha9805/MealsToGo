@@ -19,10 +19,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.sasha98.MealsToGo"
     },
     "plugins": [
       "expo-font"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "354debb1-58db-4a6c-8bce-d865d7482cc4"
+      }
+    },
+    "owner": "sasha98"
   }
 }
